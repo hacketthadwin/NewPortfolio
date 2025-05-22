@@ -242,8 +242,8 @@ const Home = () => {
           textClassName="text-[0.7rem] sm:text-[1.4rem] md:text-[2rem] lg:text-[3rem] xl:text-[3rem] 2xl:text-[3rem] font-medium text-gray-200 dosis-font"
           containerClassName="w-screen mt-[-6rem] sm:mt-[-9rem] md:mt-[-10rem] lg:mt-[-12rem] xl:mt-[-14rem] 2xl:mt-[-15rem] ml-[-8.8rem] sm:ml-[-10.8rem] md:ml-[-11.6rem] lg:ml-[-12rem] xl:ml-[-13rem] 2xl:ml-[-20rem] pl-[4rem] pr-[0.5rem] sm:pr-[1rem] md:pr-[2rem] lg:pr-[3rem] xl:pr-[10rem] 2xl:pr-[15rem] sm:pl-[6rem] md:pl-[8rem] lg:pl-[8rem] xl:pl-[8rem] 2xl:pl-[16rem] py-[4rem] sm:py-[6rem] md:py-[8rem] lg:py-[8rem] xl:py-[8rem] 2xl:py-[8rem]"
         >
-          I am a 3rd student of Electrical Engineering Department at National Institute of Technology, Raipur. This is
-          my personal portfolio website where i showcase my projects and skills.
+          I am a 3rd year student of Electrical Engineering Department at National Institute of Technology, Raipur. This is
+          my portfolio website where i showcase my projects and skills.
         </ScrollReveal>
         <div className="text-[0.5rem] sm:text-[0.8rem] md:text-[0.8rem] lg:text-[1.1rem] xl:text-[1.7rem] 2xl:text-[2.5rem] font-bold text-white mt-[-2rem] sm:mt-[-3rem] md:mt-[0rem] lg:mt-[0rem] xl:mt-[0rem] 2xl:mt-[0rem] ml-[-4.5rem] sm:ml-[-4rem] md:ml-[-3rem] lg:ml-[-2rem] xl:ml-[-2.8rem] 2xl:ml-[-3rem]">
           I am
