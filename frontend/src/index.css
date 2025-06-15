@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply overflow-x-hidden;
+}
+
+/* Fallback for Oswald font */
+.custom-oswald {
+    font-family: 'Oswald', sans-serif;
+}
+.ibm-plex-sans-regular {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* Replace with desired weight (e.g., 300, 400, 700) */
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.dosis-font {
+  font-family: "Dosis", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.bangers-regular {
+  font-family: "Bangers", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.noto-sans-display {
+  font-family: "Noto Sans Display", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* Or 300, 500, 700 etc., depending on your design */
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+.rubik-burned-regular {
+  font-family: "Rubik Burned", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+*::selection {
+    background: #f0c040;
+    color: #000;
+
+}
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInOut {
+  animation: fadeInOut 0.75s infinite;
+}
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+html {
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+}
+body {
+    @apply overflow-x-hidden;
+    background-color: black; /* Prevents white flash after preloader */
+}
+@layer base {
+  body, a, button, [type='button'], [type='submit'], [type='reset'], [role='button'], * {
+    @apply cursor-none !important; /* Hide default cursor globally, including links and buttons */
+  }
+}
