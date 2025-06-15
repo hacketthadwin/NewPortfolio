@@ -48,6 +48,7 @@ const PreLoader = ({ onComplete = () => {} }) => {
   const [isMounted, setIsMounted] = useState(true)
 
   useEffect(() => {
+      document.body.style.overflowY = 'hidden'; // ✅ Lock scroll on mount
     // Function to calculate dynamic interval based on progress
     const getInterval = (index) => {
       const total = greetings.length
@@ -84,6 +85,7 @@ const PreLoader = ({ onComplete = () => {} }) => {
         setIsVisible(false)
         setTimeout(() => {
           setIsMounted(false)
+          document.body.style.overflowY = 'auto'; // ✅ Unlock scroll when preloader ends
           onComplete()
         }, 600)
       }, 4000)
@@ -91,8 +93,11 @@ const PreLoader = ({ onComplete = () => {} }) => {
       return () => clearTimeout(timeout)
     })
 
-    return () => clearInterval(intervalId)
-  }, [onComplete])
+  return () => {
+    clearInterval(intervalId);
+    document.body.style.overflowY = 'auto'; // ✅ Safety net on unmount
+  };
+}, [onComplete]);
 
   return isMounted ? (
     <div className="fixed inset-0 z-50 overflow-hidden">
