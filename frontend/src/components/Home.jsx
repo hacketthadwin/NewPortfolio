@@ -159,7 +159,7 @@ const Home = () => {
               magnetStrength={5}
             >
               <a
-                href="https://drive.google.com/file/d/1Sv_YAWhfAX1tPbnnTHgKvnKXagpALEYV/view?usp=sharing"
+                href="https://drive.google.com/file/d/1tvznfQzTQzabS36IP9uvSAd-HMjHZAyr/view?usp=drive_link"
                 className="flex items-center justify-center gap-1 w-full h-full text-center"
               >
                 Download CV
