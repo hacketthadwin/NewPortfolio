@@ -34,7 +34,7 @@ const ResponsiveParticles = () => {
         particleCount={particleCount}
         particleSpread={2}
         speed={0.1}
-        particleBaseSize={90}
+        particleBaseSize={40}
         moveParticlesOnHover={false}
         alphaParticles={true}
         disableRotation={false}
