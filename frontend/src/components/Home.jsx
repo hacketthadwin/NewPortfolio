@@ -134,7 +134,7 @@ const Home = () => {
         style={{
           minHeight: "170vh",
         }}
-        className="overflow-hidden border-[0rem] lg:border-[0rem] border-[#323332] absolute top-[2rem] left-[1.5rem] sm:left-[1rem] md:left-[1.3rem] xl:left-[2.3rem] 2xl:left-[14rem] md:top-0 scale-[1.12] sm:scale-105 mt-40 2xl:mt-56 2xl:ml-[-12rem] sm:ml-[0rem] max-w-[90vw] sm:max-w-[95vw] "
+        className="overflow-hidden border-[0rem] lg:border-[0rem] border-[#323332] absolute top-[2rem] left-[1.5rem] sm:left-[1rem] md:left-[1.3rem] xl:left-[2.3rem] 2xl:left-[14rem] md:top-0 scale-[1.08] sm:scale-105 mt-40 2xl:mt-56 2xl:ml-[-12rem] sm:ml-[0rem] max-w-[90vw] sm:max-w-[95vw] "
       >
         <div>
           <ResponsiveParticles/>
