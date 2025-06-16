@@ -41,7 +41,7 @@ const Contact = () => {
     <MotionWrapper>
       <div className='flex flex-col items-center h-screen'>
         <div className='text-white font-bold text-6xl'>Contact me</div>
-        <form onSubmit={handleSubmit} className='scale-[1.5] mt-28'>
+        <form onSubmit={handleSubmit} className=' mt-10'>
           <div className='flex flex-col items-center mt-10'>
             <input
               type="text"
