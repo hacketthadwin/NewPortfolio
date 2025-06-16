@@ -71,7 +71,7 @@ const Projects = () => {
 
   return (
     <MotionWrapper>
-      <div className="container mx-auto px-4 py-8 scale-[1.5] mt-[12rem]">
+      <div className="container mx-auto px-4 py-8 mt-[12rem]">
         <h2 className="text-4xl font-bold text-center text-white mb-12">My Projects</h2>
         <div style={{ height: '600px', position: 'relative' }}>
           <ChromaGrid
