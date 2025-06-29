@@ -56,8 +56,6 @@ A modern, full-stack, animated developer portfolio built with **React**, **Tailw
 
 ## 📷 Images
 
-> Add your images in a `/screenshots` folder in the root of your project and update the paths below.
-
 ### 🏠 Home Page  
 ![Home Page](./screenshots/home.png)
 
