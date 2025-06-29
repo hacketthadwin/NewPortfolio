@@ -65,7 +65,7 @@ A modern, full-stack, animated developer portfolio built with **React**, **Tailw
 ![Projects Page](./screenshots/projects.png)
 
 ### 🏆 CP Profiles Page  
-![CP Profiles Page](./screenshots/cp-profiles.png)
+![CP Profiles Page](./screenshots/profiles.png)
 
 ### 📞 Contact Page  
 ![Contact Page](./screenshots/contact.png)
