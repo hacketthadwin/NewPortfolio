@@ -7,6 +7,21 @@ A modern, full-stack, animated developer portfolio built with **React**, **Tailw
 🔗 [Visit My Portfolio](https://adarshjha.vercel.app/)
 
 ---
+## 📷 Images
+
+### 🏠 Home Page  
+![Home Page](./screenshots/home.png)
+
+### 💼 Projects Page  
+![Projects Page](./screenshots/projects.png)
+
+### 🏆 CP Profiles Page  
+![CP Profiles Page](./screenshots/profiles.png)
+
+### 📞 Contact Page  
+![Contact Page](./screenshots/contact.png)
+
+---
 
 ## 🛠 Tech Stack
 
@@ -54,18 +69,3 @@ A modern, full-stack, animated developer portfolio built with **React**, **Tailw
 
 ---
 
-## 📷 Images
-
-### 🏠 Home Page  
-![Home Page](./screenshots/home.png)
-
-### 💼 Projects Page  
-![Projects Page](./screenshots/projects.png)
-
-### 🏆 CP Profiles Page  
-![CP Profiles Page](./screenshots/profiles.png)
-
-### 📞 Contact Page  
-![Contact Page](./screenshots/contact.png)
-
----
