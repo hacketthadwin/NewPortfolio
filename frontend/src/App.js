@@ -32,7 +32,7 @@ function App() {
         lenisInstance.current.scrollTo(0, { immediate: true });
         // Refresh ScrollTrigger to pick up new dimensions and scroll state after content loads
         ScrollTrigger.refresh();
-      }, 100); // Adjust this delay if content is heavy or animations are slow
+      }, 1000); // Adjust this delay if content is heavy or animations are slow
     }
   }, []); // No dependencies for lenisInstance.current as it's a ref
 
