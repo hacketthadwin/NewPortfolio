@@ -3,7 +3,7 @@
 import { useState } from "react"
 import ProfileImg from "./imgs/ProfileImg.png"
 import ScrollVelocity from "./othercomps/ScrollVelocity"
-import ScrollReveal from "./othercomps/ScrollReveal.jsx"
+import ScrollReveal from "./othercomps/ScrollReveal.jsx" // Keep ScrollReveal
 import RotatingText from "./othercomps/RotatingText.jsx"
 import Magnet from "./othercomps/Magnet.jsx"
 import TiltedCard from "./othercomps/TiltedCard"
@@ -12,6 +12,8 @@ import { EnvelopeIcon } from "@heroicons/react/24/outline"
 import MotionWrapper from "./MotionWrapper.jsx"
 import ResponsiveParticles from "./othercomps/ResponsiveParticles.jsx"
 
+// This Carousel component doesn't interact with ScrollReveal directly,
+// so it remains unchanged.
 function Carousel({ items, onTextEnter, onTextLeave }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -129,12 +131,20 @@ const Home = () => {
 
   return (
     <MotionWrapper>
-      {/* Change is on the line below: overflow-x-hidden is now overflow-hidden */}
+      {/* The overflow-hidden on this div should be carefully considered.
+          If Lenis is handling the overall page scroll, this div might not need
+          to manage its own overflow if it's within the Lenis-controlled area.
+          However, if it contains elements that overflow *its* bounds and you want
+          to hide them, it's fine.
+      */}
       <div
         style={{
-          minHeight: "170vh",
+          minHeight: "170vh", // Ensure enough height for scrolling to trigger animations
         }}
-        className="overflow-hidden border-[0rem] lg:border-[0rem] border-[#323332] absolute top-[2rem] left-[1.5rem] sm:left-[1rem] md:left-[1.3rem] xl:left-[2.3rem] 2xl:left-[14rem] md:top-0 scale-[1.12] sm:scale-105 mt-40 2xl:mt-56 2xl:ml-[-12rem] sm:ml-[0rem] max-w-[90vw] sm:max-w-[95vw] "
+        // Removed overflow-x-hidden, usually just overflow-hidden is sufficient
+        // unless you specifically want to allow vertical scroll but hide horizontal.
+        // For a main container like this, `overflow-hidden` will hide content outside.
+        className="border-[0rem] lg:border-[0rem] border-[#323332] absolute top-[2rem] left-[1.5rem] sm:left-[1rem] md:left-[1.3rem] xl:left-[2.3rem] 2xl:left-[14rem] md:top-0 scale-[1.12] sm:scale-105 mt-40 2xl:mt-56 2xl:ml-[-12rem] sm:ml-[0rem] max-w-[90vw] sm:max-w-[95vw] overflow-hidden"
       >
         <div>
           <ResponsiveParticles/>
@@ -188,7 +198,7 @@ const Home = () => {
           </div>
           <div className="absolute top-[4rem] sm:top-[10rem] md:top-[17rem] lg:top-[25rem] xl:top-[36rem] 2xl:top-[36rem] left-[-9rem] sm:left-[-8rem] md:left-[-2rem] lg:left-[-2rem] xl:left-[-8rem] 2xl:left-[-14.3rem]">
             <ScrollVelocity
-              texts={["ADARSH JHA -  ", "DESIGN - DEVELOP - DELIVER - REPEAT - "]}
+              texts={["ADARSH JHA -  ", "DESIGN - DEVELOP - DELIVER - REPEAT - "]}
               velocity={200}
               className="text-[1.6rem] sm:text-[2.2rem] md:text-[3rem] lg:text-[4rem] xl:text-[7rem] 2xl:text-[9rem] font-light text-gray-300 noto-sans-display hover:text-white"
               parallaxStyle={{
@@ -205,6 +215,7 @@ const Home = () => {
           </div>
         </div>
 
+        {/* ScrollReveal components - scrollContainerRef prop removed */}
         <ScrollReveal
           baseOpacity={0.1}
           enableBlur={true}
