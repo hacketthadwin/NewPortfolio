@@ -89,7 +89,7 @@ const PreLoader = ({ onComplete = () => {} }) => {
           document.body.style.overflowY = 'auto'; // ⭐ Re-enable scroll after preloader is fully gone ⭐
           onComplete(); // Notify App.js that preloader is done
         }, 600) // Matches transition duration of preloader element
-      }, 2000) // Preloader's main display time (2 seconds)
+      }, 3000) // Preloader's main display time (2 seconds)
 
       return () => clearTimeout(timeout)
     })
