@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useCallback } from 'react'; // Import useCallback
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Lenis from 'lenis';
@@ -16,20 +16,30 @@ import CustomCursor from './components/CustomCursor.jsx';
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
-  const scrollContainerRef = useRef(null);
+  const lenisInstance = useRef(null);
 
-  const handlePreloaderComplete = () => {
+  const handlePreloaderComplete = useCallback(() => {
     setIsLoading(false);
-  };
+
+    if (lenisInstance.current) {
+
+      setTimeout(() => {
+        lenisInstance.current.resize();
+        lenisInstance.current.scrollTo(0, { immediate: true }); 
+      }, 100); 
+    }
+  }, []); 
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.9,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothTouch: true,
       touchMultiplier: 1.5,
       wheelMultiplier: 1.1,
     });
+
+    lenisInstance.current = lenis; 
 
     function raf(time) {
       lenis.raf(time);
@@ -41,10 +51,11 @@ function App() {
     return () => {
       lenis.destroy();
     };
-  }, []);
+  }, []); 
 
   return (
-    <div ref={scrollContainerRef} className="lenis lenis-smooth relative">
+
+    <div className="relative">
       <CustomCursor />
       <Toaster
         position="top-right"
