@@ -80,10 +80,10 @@ const HeaderSection = () => {
             <Link
               key={link.path}
               to={link.path}
-              className="hover:no-underline group relative py-2"
+              className="hover:no-underline py-6 text-white font-bold text-6xl" // Added text-white and font-bold
               onClick={() => setIsMenuOpen(false)}
             >
-              <TrueFocus sentence={link.text} blurAmount={0} borderColor="#70B8F2" animationDuration={0.5} />
+              {link.text} {/* Changed from <TrueFocus /> to plain text */}
             </Link>
           ))}
         </nav>
