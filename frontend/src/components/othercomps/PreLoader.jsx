@@ -50,10 +50,7 @@ const PreLoader = ({ onComplete = () => {} }) => {
   const [isMounted, setIsMounted] = useState(true)
 
   useEffect(() => {
-    // ⚠️ Crucial Change: Only hide overflow if the preloader is truly meant to block scroll.
-    // If your main content is already loaded and just hidden by the preloader,
-    // Lenis might not need overflow: hidden.
-    // However, if the preloader covers a blank page and content loads later, this is fine.
+    // This hides the body's scrollbar while the preloader is active.
     document.body.style.overflowY = 'hidden';
 
     const getInterval = (index) => {
@@ -83,15 +80,16 @@ const PreLoader = ({ onComplete = () => {} }) => {
     intervalId = setInterval(updateGreeting, getInterval(0))
 
     preloadImages(imageList).then(() => {
-      // The timeout here orchestrates the preloader's exit animation
+      // This timeout controls how long the preloader is fully visible.
       const timeout = setTimeout(() => {
         setIsVisible(false) // Start fade-out/slide-out animation of preloader
+        // This inner timeout allows the preloader's exit animation to complete
         setTimeout(() => {
           setIsMounted(false) // Unmount preloader from DOM
-          document.body.style.overflowY = 'auto'; // ✅ Re-enable scroll after preloader is fully gone
+          document.body.style.overflowY = 'auto'; // ⭐ Re-enable scroll after preloader is fully gone ⭐
           onComplete(); // Notify App.js that preloader is done
         }, 600) // Matches transition duration of preloader element
-      }, 4000) // Delay before preloader starts to disappear
+      }, 2000) // Preloader's main display time (2 seconds)
 
       return () => clearTimeout(timeout)
     })
