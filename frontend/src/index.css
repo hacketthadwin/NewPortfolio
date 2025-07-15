@@ -2,18 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+/* body {
     @apply overflow-x-hidden;
-}
+} */
 
-/* Fallback for Oswald font */
 .custom-oswald {
     font-family: 'Oswald', sans-serif;
 }
 .ibm-plex-sans-regular {
   font-family: "IBM Plex Sans", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400; /* Replace with desired weight (e.g., 300, 400, 700) */
+  font-weight: 400;
   font-style: normal;
   font-variation-settings: "wdth" 100;
 }
@@ -32,7 +31,7 @@ body {
 .noto-sans-display {
   font-family: "Noto Sans Display", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400; /* Or 300, 500, 700 etc., depending on your design */
+  font-weight: 400;
   font-style: normal;
   font-variation-settings: "wdth" 100;
 }
@@ -44,7 +43,6 @@ body {
 *::selection {
     background: #f0c040;
     color: #000;
-
 }
 @keyframes fadeInOut {
   0%, 100% {
@@ -60,8 +58,9 @@ body {
 .animate-fadeInOut {
   animation: fadeInOut 0.75s infinite;
 }
+
 html.lenis {
-  height: auto;
+  height: auto; 
 }
 
 .lenis.lenis-smooth {
@@ -73,15 +72,19 @@ html.lenis {
 }
 
 html {
-  scroll-behavior: smooth;
   overscroll-behavior: none;
 }
+
 body {
-    @apply overflow-x-hidden;
-    background-color: black; /* Prevents white flash after preloader */
+    /* @apply overflow-x-hidden; */
+    background-color: black;
+    min-height: 100vh;
+    overflow-y: scroll; 
+    overflow-x: hidden; 
 }
+
 @layer base {
   body, a, button, [type='button'], [type='submit'], [type='reset'], [role='button'], * {
-    @apply cursor-none !important; /* Hide default cursor globally, including links and buttons */
+    @apply cursor-none !important;
   }
 }
