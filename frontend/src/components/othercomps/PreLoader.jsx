@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useState } from 'react'
 
 const greetings = [
@@ -48,16 +50,18 @@ const PreLoader = ({ onComplete = () => {} }) => {
   const [isMounted, setIsMounted] = useState(true)
 
   useEffect(() => {
-      document.body.style.overflowY = 'hidden'; // ✅ Lock scroll on mount
-    // Function to calculate dynamic interval based on progress
+    // ⚠️ Crucial Change: Only hide overflow if the preloader is truly meant to block scroll.
+    // If your main content is already loaded and just hidden by the preloader,
+    // Lenis might not need overflow: hidden.
+    // However, if the preloader covers a blank page and content loads later, this is fine.
+    document.body.style.overflowY = 'hidden';
+
     const getInterval = (index) => {
       const total = greetings.length
-      const progress = index / (total - 1) // Normalized progress (0 to 1)
-      // Quadratic function: slow at start/end, fast in middle
-      const minInterval = 150 // Fastest (middle)
-      const maxInterval = 400 // Slowest (start/end)
-      // y = a(x-0.5)^2 + minInterval, where a is scaled to reach maxInterval at edges
-      const a = 4 * (maxInterval - minInterval) // Scale factor for parabola
+      const progress = index / (total - 1)
+      const minInterval = 150
+      const maxInterval = 400
+      const a = 4 * (maxInterval - minInterval)
       return a * (progress - 0.5) * (progress - 0.5) + minInterval
     }
 
@@ -70,34 +74,34 @@ const PreLoader = ({ onComplete = () => {} }) => {
           clearInterval(intervalId)
           return prev
         }
-        // Clear previous interval and set new one with updated speed
         clearInterval(intervalId)
         intervalId = setInterval(updateGreeting, getInterval(next))
         return next
       })
     }
 
-    // Start with initial interval
     intervalId = setInterval(updateGreeting, getInterval(0))
 
     preloadImages(imageList).then(() => {
+      // The timeout here orchestrates the preloader's exit animation
       const timeout = setTimeout(() => {
-        setIsVisible(false)
+        setIsVisible(false) // Start fade-out/slide-out animation of preloader
         setTimeout(() => {
-          setIsMounted(false)
-          document.body.style.overflowY = 'auto'; // ✅ Unlock scroll when preloader ends
-          onComplete()
-        }, 600)
-      }, 4000)
+          setIsMounted(false) // Unmount preloader from DOM
+          document.body.style.overflowY = 'auto'; // ✅ Re-enable scroll after preloader is fully gone
+          onComplete(); // Notify App.js that preloader is done
+        }, 600) // Matches transition duration of preloader element
+      }, 4000) // Delay before preloader starts to disappear
 
       return () => clearTimeout(timeout)
     })
 
-  return () => {
-    clearInterval(intervalId);
-    document.body.style.overflowY = 'auto'; // ✅ Safety net on unmount
-  };
-}, [onComplete]);
+    return () => {
+      clearInterval(intervalId);
+      // Ensure scroll is re-enabled if component unmounts for any reason before timeout completes
+      document.body.style.overflowY = 'auto';
+    };
+  }, [onComplete]); // Dependency array should include onComplete
 
   return isMounted ? (
     <div className="fixed inset-0 z-50 overflow-hidden">
@@ -119,4 +123,4 @@ const PreLoader = ({ onComplete = () => {} }) => {
   ) : null
 }
 
-export default PreLoader
+export default PreLoader;
