@@ -134,7 +134,7 @@ const Home = () => {
         style={{
           minHeight: "170vh",
         }}
-        className="overflow-hidden border-[0rem] lg:border-[0rem] border-[#323332] absolute top-[2rem] left-[1.5rem] sm:left-[1rem] md:left-[1.3rem] xl:left-[2.3rem] 2xl:left-[14rem] md:top-0 scale-[1.08] sm:scale-105 mt-40 2xl:mt-56 2xl:ml-[-12rem] sm:ml-[0rem] max-w-[90vw] sm:max-w-[95vw] "
+        className="overflow-hidden border-[0rem] lg:border-[0rem] border-[#323332] absolute top-[2rem] left-[1.5rem] sm:left-[1rem] md:left-[1.3rem] xl:left-[2.3rem] 2xl:left-[14rem] md:top-0 scale-[1.12] sm:scale-105 mt-40 2xl:mt-56 2xl:ml-[-12rem] sm:ml-[0rem] max-w-[90vw] sm:max-w-[95vw] "
       >
         <div>
           <ResponsiveParticles/>
@@ -256,14 +256,8 @@ const Home = () => {
           mainClassName="text-[0.5rem] sm:text-[0.8rem] md:text-[0.8rem] lg:text-[1.1rem] xl:text-[1.7rem] 2xl:text-[2.5rem] font-bold text-white mt-[-1.5rem] sm:mt-[-2.0rem] md:mt-[-2.4rem] lg:mt-[-2.8rem] xl:mt-[-3.7rem] 2xl:mt-[-4.7rem] ml-[2.3rem] sm:ml-[3.2rem] md:ml-[5.5rem] lg:ml-[4.5rem] xl:ml-[5.2rem] 2xl:ml-[12rem]"
         />
 
-        <div className="font-bold text-gray-300 text-md sm:text-lg md:text-xl lg:text-3xl xl:text-4xl 2xl:text-5xl mt-[1rem] sm:mt-[3rem] md:mt-[5.5rem] lg:mt-[-5rem] xl:mt-[-6rem] 2xl:mt-[-9rem] ml-[5rem] sm:ml-[15rem] md:ml-[22rem] lg:ml-[40rem] xl:ml-[49rem] 2xl:ml-[65rem]">
-          MY PROJECTS
-        </div>
-        <div className="mt-[-3rem] sm:mt-[-5rem] md:mt-[-6rem] lg:mt-[-7rem] xl:mt-[-5rem] 2xl:mt-[-10rem] ml-[-6rem] sm:ml-[-6rem] md:ml-[-4rem] lg:ml-[10rem] xl:ml-[18rem] 2xl:ml-[35rem] w-[30rem] sm:w-[50rem] md:w-[60rem] lg:w-[70rem] xl:w-[75rem] 2xl:w-[80rem] h-[15rem] sm:h-[25rem] md:h-[30rem] lg:h-[35rem] xl:h-[40rem] 2xl:h-[50rem] scale-[0.6] sm:scale-[0.60] md:scale-[0.5] lg:scale-[0.60] xl:scale-[0.8] 2xl:scale-[0.4]">
-          <Carousel items={items} />
-        </div>
 
-        <div className="mt-[-24rem] sm:mt-[-41rem] md:mt-[-52.5rem] lg:mt-[-40rem] xl:mt-[-48rem] 2xl:mt-[-58rem] ml-[-1rem] sm:ml-[-3rem] md:ml-[5rem] lg:ml-[-24rem] xl:ml-[-25rem] 2xl:ml-[-25rem] w-[30rem] sm:w-[50rem] md:w-[60rem] lg:w-[70rem] xl:w-[75rem] 2xl:w-[80rem] h-[15rem] sm:h-[25rem] md:h-[30rem] lg:h-[35rem] xl:h-[40rem] 2xl:h-[50rem] scale-[0.2] sm:scale-[0.25] md:scale-[0.35] lg:scale-[0.45] xl:scale-[0.6] 2xl:scale-[0.5]">
+        <div className="mt-[-6rem] sm:mt-[-12rem] md:mt-[-15.5rem] lg:mt-[-19rem] xl:mt-[-23rem] 2xl:mt-[-29rem] ml-[-10.8rem] sm:ml-[-20rem] md:ml-[-21rem] lg:ml-[-26rem] xl:ml-[-26rem] 2xl:ml-[-25rem] w-[30rem] sm:w-[50rem] md:w-[60rem] lg:w-[70rem] xl:w-[75rem] 2xl:w-[80rem] h-[15rem] sm:h-[25rem] md:h-[30rem] lg:h-[35rem] xl:h-[40rem] 2xl:h-[50rem] scale-[0.2] sm:scale-[0.25] md:scale-[0.35] lg:scale-[0.45] xl:scale-[0.6] 2xl:scale-[0.5]">
           <Dock items={items2} panelHeight={68} baseItemSize={50} magnification={70} />
         </div>
       </div>
