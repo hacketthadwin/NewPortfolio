@@ -13,8 +13,6 @@ const Competitive = () => {
             <br />
             <p className='text-green-500 text-2xl font-semibold'>PUPIL</p>
             <p className='text-gray-400 text-xl font-semibold'>Username: <span className='text-white'>hacketthadwin7</span></p>
-            <p className='text-gray-400 text-xl font-semibold'>Current Rating: <span className='text-white'>1227</span></p>
-            <p className='text-gray-400 text-xl font-semibold'>Max Rating: <span className='text-white'>1266</span></p>
           </a>
         </PixelCard>
                 <PixelCard variant="white">
@@ -24,8 +22,6 @@ const Competitive = () => {
             <br />
             <p className='text-blue-500 text-2xl font-semibold'>3 Star</p>
             <p className='text-gray-400 text-xl font-semibold'>Username: <span className='text-white'>hacketthadwin7</span></p>
-            <p className='text-gray-400 text-xl font-semibold'>Current Rating: <span className='text-white'>1595</span></p>
-            <p className='text-gray-400 text-xl font-semibold'>Max Rating: <span className='text-white'>1616</span></p>
           </a>
         </PixelCard>
       </div>
